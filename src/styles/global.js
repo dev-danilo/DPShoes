@@ -11,8 +11,22 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: #191920 url(${background}) no-repeat center top;
+    background: #3B3355 url(${background}) no-repeat;
     -webkit-font-smoothing: antialiased;
+
+    &::before {
+      content: '';
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      background:  url(${background}) no-repeat center -60px/101vw;
+      z-index: -5;
+
+      @media (max-width: 1200px) {
+        background: url(${background}) no-repeat center top ;
+      }
   }
 
   body, input, button {
