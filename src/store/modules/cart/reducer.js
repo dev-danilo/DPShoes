@@ -19,6 +19,16 @@ export default function cart(state = [], action) {
           });
         }
       });
+    case 'REMOVE_FROM_CART':
+      return produce(state, draft => {
+        const productIndex = draft.findIndex(p => p.id === action.id);
+        // procura por um produto que ja esta no nosso carrinho draft.findIndex(p => p.id
+        // E se existe algum produto que o id é igual a esse que estamos recebendo da action
+
+        if (productIndex >= 0) {
+          draft.splice(productIndex, 1);
+        }
+      });
     default:
       return state;
   }

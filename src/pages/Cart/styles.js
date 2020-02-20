@@ -72,7 +72,7 @@ export const ProductTable = styled.table`
       border-radius: 4px;
       color: #666;
       padding: 6px;
-      width: 20px;
+      width: 30px;
     }
   }
 
