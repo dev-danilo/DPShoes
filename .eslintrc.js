@@ -33,6 +33,7 @@ module.exports = {
     ],
     'import/prefer-default-expoirt': 'off',
     'no-param-reassign': 'off',
-    'no-console': ["error", { allow: ["tron"]}]
+    'no-console': ["error", { allow: ["tron"]}],
+    " no-console " :  1
   },
 };
