@@ -29,6 +29,22 @@ export default function cart(state = [], action) {
           draft.splice(productIndex, 1);
         }
       });
+    case '@cart/UPDATE_AMOUNT': {
+      if (action.amount <= 0) {
+        // quantidade do produto <=0 conserva o estado atual. Ou seja, 1.
+        return state;
+      }
+
+      return produce(state, draft => {
+        const productIndex = draft.findIndex(p => p.id === action.id);
+        // procura por um produto que ja esta no nosso carrinho draft.findIndex(p => p.id
+        // E se existe algum produto que o id é igual a esse que estamos recebendo da action
+
+        if (productIndex >= 0) {
+          draft[productIndex].amount = Number(action.amount);
+        }
+      });
+    }
     default:
       return state;
   }
