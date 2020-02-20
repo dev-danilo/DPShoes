@@ -7,16 +7,49 @@ export const ProductList = styled.ul`
   grid-gap: 20px;
   list-style: none;
 
+
+  @media (max-width: 945px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 520px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   li {
     display: flex;
     flex-direction: column;
     background: #fff;
     border-radius: 4px;
-    padding: 2px;
+    padding: 20px;
 
-    img {
-      align-self: center;
-      max-width: 250px;
+    &:hover figure img {
+      opacity: 0.9;
+    }
+
+    figure {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      max-height: 250px;
+      padding-top: 91%;
+      text-align: center;
+
+      @media (max-width: 490px) {
+        padding-top: 60%;
+      }
+
+      img, span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        max-height: 100%;
+        margin: auto;
+        transition: opacity 150ms ease-in-out;
+      }
     }
 
     > strong {

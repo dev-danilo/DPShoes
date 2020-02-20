@@ -11,7 +11,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: #3B3355 url(${background}) no-repeat;
+    background: #191922 url(${background}) no-repeat;
     -webkit-font-smoothing: antialiased;
 
     &::before {
@@ -42,7 +42,4 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
-
-
-
 `;

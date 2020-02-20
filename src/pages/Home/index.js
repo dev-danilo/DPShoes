@@ -40,7 +40,9 @@ class Home extends Component {
       <ProductList>
         {products.map(product => (
           <li key={product.id}>
-            <img src={product.image} alt={product.title} />
+            <figure>
+              <img src={product.image} alt={product.title} />
+            </figure>
             <strong>{product.title}</strong>
             <span>{product.priceFormatted}</span>
             <button
