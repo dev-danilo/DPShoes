@@ -11,7 +11,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: #191922 url(${background}) no-repeat;
+    background: #7159c1 url(${background}) no-repeat;
     -webkit-font-smoothing: antialiased;
 
     &::before {

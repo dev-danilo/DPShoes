@@ -7,7 +7,6 @@ export const ProductList = styled.ul`
   grid-gap: 20px;
   list-style: none;
 
-
   @media (max-width: 945px) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -101,4 +100,4 @@ export const ProductList = styled.ul`
       }
     }
   }
-`;
+  `;
