@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'react-toastify/dist/ReactToastify.css';
+
 import background from '../assets/images/background.svg';
 
 export default createGlobalStyle`
@@ -42,4 +44,4 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
-`;
+  }`;

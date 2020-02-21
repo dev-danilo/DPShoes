@@ -4,6 +4,7 @@ import { call, select, put, all, takeLatest } from 'redux-saga/effects';
 // metodo put dispara a action
 // takelatest se o usuario fizer varias chamadas ao mesmo tempo,
 // Saga vai descartar apartir da segunda, cadastrando apenas a primeira no carrinho
+import { toast } from 'react-toastify';
 import api from '../../../services/api';
 import { addToCartSuccess, updateAmount } from './actions';
 
@@ -25,6 +26,7 @@ function* addToCart({ id }) {
   const amount = currentAmount + 1;
 
   if (amount > stockAmount) {
+    toast.error('Sem estoque!!! 😔');
     console.tron.warn('ERRO');
     return;
   }
