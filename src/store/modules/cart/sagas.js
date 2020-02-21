@@ -6,9 +6,11 @@ import { call, select, put, all, takeLatest } from 'redux-saga/effects';
 // Saga vai descartar apartir da segunda, cadastrando apenas a primeira no carrinho
 import { toast } from 'react-toastify';
 import api from '../../../services/api';
-import { addToCartSuccess, updateAmount } from './actions';
+import { addToCartSuccess, updateAmountSuccess } from './actions';
 
 import { formatPrice } from '../../../util/format';
+
+import history from '../../../services/history';
 
 function* addToCart({ id }) {
   // (function*) generator como se fosse um async (babel converte async para generator)
@@ -27,12 +29,11 @@ function* addToCart({ id }) {
 
   if (amount > stockAmount) {
     toast.error('Sem estoque!!! 😔');
-    console.tron.warn('ERRO');
     return;
   }
 
   if (productExists) {
-    yield put(updateAmount(id, amount));
+    yield put(updateAmountSuccess(id, amount));
   } else {
     const response = yield call(api.get, `/products/${id}`);
 
@@ -42,10 +43,29 @@ function* addToCart({ id }) {
       priceFormatted: formatPrice(response.data.price),
     };
     yield put(addToCartSuccess(data));
+    history.push('/cart');
   }
 }
 
-export default all([takeLatest('@cart/ADD_REQUEST', addToCart)]);
+function* updateAmount({ id, amount }) {
+  if (amount <= 0) return;
+
+  const stock = yield call(api.get, `stock/${id}`);
+
+  const stockAmount = stock.data.amount;
+
+  if (amount > stockAmount) {
+    toast.error('Sem estoque!!! 😔');
+    return;
+  }
+
+  yield put(updateAmountSuccess(id, amount));
+}
+
+export default all([
+  takeLatest('@cart/ADD_REQUEST', addToCart),
+  takeLatest('@cart/UPDATE_AMOUNT_REQUEST', updateAmount),
+]);
 // primeiro parametro takelatest é qual acao quer disparar
 // segundo parametro takelatest é quao function sera chamada apos a execução da ação
 

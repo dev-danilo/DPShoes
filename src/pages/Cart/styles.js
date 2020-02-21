@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-import { darken } from 'polished';
+import { Link } from 'react-router-dom';
+import { darken, lighten } from 'polished';
 
-export const Container = styled.div`
+export const Container = styled.main`
   padding: 30px;
   background: #fff;
   border-radius: 4px;
 
   footer {
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,9 +23,9 @@ export const Container = styled.div`
       border: 0;
       border-radius: 4px;
       padding: 12px 20px; /** altura e largura do padding */
-      margin-top: auto;
-      text-transform: uppercase; /** letras maiusculas */
       font-weight: bold;
+      text-transform: uppercase; /** letras maiusculas */
+      transition: background 180ms ease-in-out;
 
       @media (max-width: 520px) {
         margin-top: 20px;
@@ -32,10 +33,64 @@ export const Container = styled.div`
         padding: 20px;
       }
 
-      transition: background 0.2s;
       &:hover {
-        background: ${darken(0.03, '#7159c1')};
+        background: ${darken(0.04, '#7159c1')};
       }
+    }
+  }
+`;
+
+export const EmptyCart = styled.section`
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @media (max-width: 560px) {
+    min-height: 400px;
+  }
+
+  svg {
+    font-size: 260px;
+    color: #f3f3f6;
+    position: absolute;
+  }
+
+  div {
+    z-index: 1;
+    text-align: center;
+
+    h2 {
+      font-size: 56px;
+    }
+
+    p {
+      margin: 12px 0 28px;
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  }
+`;
+
+export const StartShopping = styled(Link)`
+    background: #7159c1;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 180ms ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+      background: ${lighten(0.04, '#7159c1')};
+    }
+
+    &:active {
+      background: ${darken(0.04, '#7159c1')};
     }
   }
 `;
@@ -49,8 +104,9 @@ export const ProductTable = styled.table`
       display: none;
     }
   }
+
   thead th {
-    color: #999;
+    color: #333;
     text-align: left;
     padding: 12px;
 
@@ -58,6 +114,7 @@ export const ProductTable = styled.table`
       text-align: center;
     }
   }
+
   tbody tr {
     border-bottom: 1px solid #eee;
     @media (max-width: 640px) {
@@ -66,9 +123,9 @@ export const ProductTable = styled.table`
       align-items: center;
     }
   }
+
   tbody td {
     padding: 12px;
-    border-bottom: 1px solid #eee;
 
     &:first-child {
       @media (max-width: 640px) {
@@ -93,6 +150,7 @@ export const ProductTable = styled.table`
         }
       }
     }
+
     &:nth-child(3),
     &:nth-child(4),
     &:nth-child(5) {
@@ -134,21 +192,19 @@ export const ProductTable = styled.table`
       }
     }
   }
+
   img {
     height: 100px;
-    max-width: 100px;
   }
 
   strong {
-    /** nome do produto */
-    color: #333;
     display: block;
   }
 
   span {
     /** Preço unitario produto */
     display: block;
-    margin-top: 5px;
+    margin-top: 4px;
     font-size: 18px;
     font-weight: bold;
   }
@@ -156,14 +212,15 @@ export const ProductTable = styled.table`
   div {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     input {
-      /** input quantidade */
       border: 1px solid #ddd;
-      border-radius: 4px;
+      border-radius: 3px;
       color: #666;
       padding: 6px;
-      width: 30px;
+      width: 50px;
+      text-align: center;
 
       @media (max-width: 640px) {
         width: 36px;
@@ -175,7 +232,7 @@ export const ProductTable = styled.table`
     /** botoes remove e adiciona carrinho */
     background: none;
     border: 0;
-    padding: 6px;
+    padding: 6px 8px;
 
     svg {
       @media (max-width: 640px) {
@@ -188,10 +245,10 @@ export const ProductTable = styled.table`
 
 export const Total = styled.div`
   display: flex;
-  align-items: center;
+  align-items: baseline;
 
   span {
-    color: #999;
+    color: #333;
     font-weight: bold;
   }
 

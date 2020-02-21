@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { MdAddShoppingCart } from 'react-icons/md';
 
-import { toast } from 'react-toastify';
 import { formatPrice } from '../../util/format';
 import { ProductList } from './styles';
 import api from '../../services/api';
@@ -15,9 +14,10 @@ class Home extends Component {
     this.state = {
       products: [],
     };
-    toast.success('Bem vindo 🚀', {
-      position: toast.POSITION.TOP_RIGHT,
-    });
+    /* toast.success('Bem vindo 🚀', {
+     *  position: toast.POSITION.TOP_RIGHT,
+     *  });
+     */
   }
 
   async componentDidMount() {
@@ -33,6 +33,7 @@ class Home extends Component {
 
   handleAddProduct = id => {
     const { addToCartRequest } = this.props;
+
     addToCartRequest(id);
   };
 

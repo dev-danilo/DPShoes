@@ -11,7 +11,8 @@ import Header from './components/Header';
 import Routes from './routes';
 
 import store from './store';
-
+// import history from './services/history';
+// <Router history={history}
 function App() {
   return (
     <Provider store={store}>
