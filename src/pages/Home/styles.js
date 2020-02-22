@@ -11,7 +11,7 @@ export const ProductList = styled.ul`
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 520px) {
+  @media (max-width: 490px) {
     grid-template-columns: repeat(1, 1fr);
   }
 
