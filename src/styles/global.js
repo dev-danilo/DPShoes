@@ -12,6 +12,7 @@ export default createGlobalStyle`
     outline:0;
     box-sizing: border-box;
   }
+
   body {
     background: #7159c1 url(${background}) no-repeat;
     -webkit-font-smoothing: antialiased;
