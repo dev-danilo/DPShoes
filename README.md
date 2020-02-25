@@ -1,11 +1,11 @@
 <h1 align="center">
-    <img alt="React RocketShoes" src="https://res.cloudinary.com/danilopereira/image/upload/v1582162964/Rocketshoes/rocketshoeslogo_mijaf5.png" />
+    <img alt="Rocketshoes" src="https://res.cloudinary.com/danilopereira/image/upload/v1582162964/Rocketshoes/rocketshoeslogo_mijaf5.png" />
     <br>
     Rocketshoes
 </h1>
 
 <h4 align="center">
-  NetShoes Clone App with React and Redux.
+  Netshoes Clone App with React and Redux.
 </h4>
 
 
