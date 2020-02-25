@@ -18,7 +18,7 @@
 ![App Screenshot](https://res.cloudinary.com/danilopereira/image/upload/v1582651961/Rocketshoes/demoNetlify.png)
 <p align="center">
   <a href="https://dprocketshoes.netlify.com/" target="_blank">
-    <img alt="Demo on Netlify" src="https://res.cloudinary.com/danilopereira/image/upload/v1582651515/Rocketshoes/demoOnNetlify.svg">
+    <img alt="Demo on Netlify" src="https://res.cloudinary.com/danilopereira/image/upload/v1582659473/Rocketshoes/demoNetlifyy.png">
   </a>
 </p>
 
