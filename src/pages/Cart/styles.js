@@ -18,7 +18,7 @@ export const Container = styled.main`
     }
 
     button {
-      background: #7159c1;
+      background: #5AA9E6;
       color: #fff;
       border: 0;
       border-radius: 4px;
@@ -34,7 +34,7 @@ export const Container = styled.main`
       }
 
       &:hover {
-        background: ${darken(0.04, '#7159c1')};
+        background: ${darken(0.04, '#5AA9E6')};
       }
     }
   }
@@ -74,7 +74,7 @@ export const EmptyCart = styled.section`
 `;
 
 export const StartShopping = styled(Link)`
-    background: #7159c1;
+    background: #5AA9E6;
     color: #fff;
     border: 0;
     border-radius: 4px;
@@ -86,11 +86,11 @@ export const StartShopping = styled(Link)`
     display: inline-block;
 
     &:hover {
-      background: ${lighten(0.04, '#7159c1')};
+      background: ${lighten(0.04, '#5AA9E6')};
     }
 
     &:active {
-      background: ${darken(0.04, '#7159c1')};
+      background: ${darken(0.04, '#5AA9E6')};
     }
   }
 `;
